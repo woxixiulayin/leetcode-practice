@@ -16,21 +16,24 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(l1, l2) {
-    let head2 = l2
-    let current2 = l2
-    let current1 = l1
-
-    while(current1.next) {
-      head2 = current2.next
-
-      // current2 = current1.next
-      current2.next = current1.next
-      current1.next = current2
-      
-      current1 = current2.next
-      current2 = head2
+  let newLinkList = new ListNode(null)
+  let current = newLinkList // 表示结果链表
+  while(l1 !== null && l2 !== null) {
+    if (l1.val < l2.val) {
+      current.next = l1
+      l1 = l1.next
+    } else {
+      current.next = l2
+      l2 = l2.next
     }
-    current1.next = head2
-    return l1
-};
+    current = current.next
+  }
 
+  if (l1 === null) {
+    current.next = l2
+  } else {
+    current.next = l1
+  }
+
+  return newLinkList.next
+};
