@@ -44,4 +44,4 @@ var generateTrees = function(n) {
     return createTree(1, n)
 };
 // @lc code=end
-// console.log(generateTrees(0))
+// console.log(generateTrees(100))
