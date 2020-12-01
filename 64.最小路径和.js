@@ -27,6 +27,7 @@ var minPathSum = function(grid) {
   }
   return grid[n-1][m-1]
 };
+
 // @lc code=end
 // console.log(minPathSum([
 //   [1,3,1],
@@ -36,4 +37,3 @@ var minPathSum = function(grid) {
 // console.log(minPathSum(
 //   [[1,2,3],
 // [4,5,6]]))
-
